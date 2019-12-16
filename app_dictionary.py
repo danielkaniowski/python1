@@ -8,10 +8,10 @@ def translate_word(w):
     if w in data:
         return data[w]
     elif len(get_close_matches(w, data.keys())) > 0:
-        yn = input('Did you mean %s instead? Please type yes or no: ' % get_close_matches(w, data.keys())[0])
-        if yn == 'yes':
+        user_confirmation = input('Did you mean %s instead? Please type yes or no: ' % get_close_matches(w, data.keys())[0])
+        if user_confirmation == 'yes':
             return data[get_close_matches(w, data.keys())[0]]
-        elif yn == 'no':
+        elif user_confirmation == 'no':
             return'This word is not valid. Please try again'
         else:
             return'I did not understand your entry'
